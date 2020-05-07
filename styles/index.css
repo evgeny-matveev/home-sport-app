@@ -1,3 +1,46 @@
+@import 'reset.css';
+
 #next {
     display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    height: 100vh;
+    padding: 24px 56px 40px 32px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px black;
+    -webkit-text-fill-color: white;
+}
+
+.btn {
+    font-weight: bold;
+    align-self: flex-start;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #000000;
+    padding: 16px 24px;
+    border: 1px solid black;
+    border-radius: 42px;
+    text-decoration: none;
 }
