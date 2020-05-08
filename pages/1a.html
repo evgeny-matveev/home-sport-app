@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировки дома</title>
+    <script src="../js/easytimer.min.js"></script>
+    <script src="../js/ejs.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/render-template.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+
+<body>
+    <script id="template" type="text/template">
+        <div class="wrapper">
+            <h1>
+                <%= pullups[1].name.split(' ')[0] %>
+                <br />
+                <%= pullups[1].name.substring(pullups[1].name.indexOf(' ') + 1) %>
+            </h1>  
+            <h2>
+                <span><%= user.pullups.qty %> повторений</span>
+                <span><%= user.set %> подход из 3</span>
+            </h2>
+            <div class="info">
+                <ul>
+                    <% advice.pullups.forEach(i => {%>
+                        <li><%= i %></li>
+                    <% }) %>
+                </ul>
+                <a class="" href=""></a>
+            </div>
+        </div>
+        <a class="btn" id="fin">Готово</a>
+        <a class="btn" id="next" href="1b.html">Дальше</a>
+    </script>
+
+    <div class="content" id="content"></div>
+
+    <div id="timer"></div>
+
+    <script src="../js/countdown.js"></script>
+</body>
+
+</html>

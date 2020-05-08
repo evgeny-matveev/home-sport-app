@@ -5,32 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тренировки дома. Главная</title>
-    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="stylesheet" href="../styles//index.css">
+    <script src="../js/ejs.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/render-template.js"></script>
 </head>
 
 <body>
-    <h1>Разминка</h1>
-    <p>Разогрейте мыщцы, чтобы подготовить их тренировке</p>
-    <p>Выполните каждое упражнение 8 раз в каждую сторону:</p>
-    <ul>
-        <li>Покрутите кистями рук</li>
-        <li>Покрутите локтями</li>
-        <li>Покрутите плечами</li>
-        <li>Y-T-W</li>
-        <li>Покрутите головой</li>
-        <li>Растяжка плеч</li>
-        <li>Мёртвые жуки</li>
-    </ul>
+    <script id="template" type="text/template">
+        <div class="wrapper">
+            <h1>Динамичная<br />разминка</h1>
+            <h2>Разогрейте мыщцы, чтобы подготовиться к тренировке</h2>
+            <div class="info">
 
-    <!-- 
-        Поднимайте руки так, словно хотите показать буквы: Y, T и W. Для Y поднимите руки над головой и разведите немного в стороны. Затем соедините руки перед собой. Для Т разведите руки в стороны на уровне плеч, лопатки должны касаться друг друга. Затем соедините руки перед собой. Для W немного согните локти и разведите руки в стороны на уровне плеч.
-     -->
+                <% warmups.forEach(w => {%>
+                    <h3><%= w.title %></h3>
+                    <p><%= w.desc %></p>
+                <% }) %>
+            </div>
+        </div>
+        <a class="btn" href="1a.html">Дальше</a>
+    </script>
 
-    <a href="set-1/pull-up.html">Дальше</a>
-    <!--
-        SCRIPTS
-    -->
-    <!-- <script src="index.js"></script> -->
+    <div class="content" id="content"></div>
 </body>
 
 </html>

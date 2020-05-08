@@ -9,14 +9,14 @@
 }
 
 body {
-    font-family: Roboto;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-main {
+.content {
     display: flex;
     justify-content: space-between;
     flex-flow: column;
-    height: 100vh;
+    min-height: 100vh;
     padding: 24px 56px 40px 32px;
 }
 
@@ -28,19 +28,75 @@ h1 {
     text-transform: uppercase;
     -webkit-text-stroke: 1.5px black;
     -webkit-text-fill-color: white;
+    padding-bottom: 40px;
+    padding-top: 16px;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 40px;
+    padding-bottom: 48px;
+}
+
+h2 span:last-child {
+    padding-left: 48px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    padding-bottom: 16px;
+}
+
+p {
+    padding-bottom: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+ul {
+    list-style: circle inside;
+    padding-left: 8px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+li {
+    line-height: 1.4;
+    padding-bottom: 16px;
 }
 
 .btn {
+    margin-top: 80px;
     font-weight: bold;
     align-self: flex-start;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 28px;
+    line-height: 1;
     letter-spacing: 1px;
     text-transform: uppercase;
 
-    color: #000000;
     padding: 16px 24px;
+    color: #000000;
     border: 1px solid black;
     border-radius: 42px;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: red;
+    border: 1px solid red; 
+}
+
+.info {
+    border: 1px solid #000000;
+    padding: 16px 96px 24px 16px;
+    display: inline-flex;
+    flex-flow: column;
+    background: white;
+    box-shadow: 16px 16px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    max-height: 35vh;
+    overflow: scroll;
 }
