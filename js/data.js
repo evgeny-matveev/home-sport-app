@@ -1,7 +1,10 @@
-const data = {
+let data = {
     user: {
-        set: 1,
         pullups: {
+            level: 2,
+            qty: 6
+        },
+        squats: {
             level: 2,
             qty: 6
         }

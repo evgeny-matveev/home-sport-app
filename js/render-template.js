@@ -3,3 +3,5 @@ window.onload = () => {
     let html = ejs.compile(template)(data);
     document.getElementById('content').innerHTML = html;
 }
+
+

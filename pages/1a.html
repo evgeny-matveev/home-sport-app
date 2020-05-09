@@ -22,7 +22,7 @@
             </h1>  
             <h2>
                 <span><%= user.pullups.qty %> повторений</span>
-                <span><%= user.set %> подход из 3</span>
+                <span><%= localStorage.getItem('aNum') %> подход из 3</span>
             </h2>
             <div class="info">
                 <ul>
@@ -33,15 +33,10 @@
                 <a class="" href=""></a>
             </div>
         </div>
-        <a class="btn" id="fin">Готово</a>
-        <a class="btn" id="next" href="1b.html">Дальше</a>
+        <a class="btn" id="next" href="rest.html">Дальше</a>
     </script>
 
     <div class="content" id="content"></div>
-
-    <div id="timer"></div>
-
-    <script src="../js/countdown.js"></script>
 </body>
 
 </html>

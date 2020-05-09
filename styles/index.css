@@ -1,9 +1,5 @@
 @import 'reset.css';
 
-#next {
-    display: none;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -22,8 +18,8 @@ body {
 
 h1 {
     font-weight: 900;
-    font-size: 80px;
-    line-height: 90px;
+    font-size: 88px;
+    line-height: 1.1;
     letter-spacing: 5px;
     text-transform: uppercase;
     -webkit-text-stroke: 1.5px black;
@@ -33,9 +29,10 @@ h1 {
 }
 
 h2 {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 30px;
+    line-height: 1.2;
     padding-bottom: 48px;
+    font-weight: 500;
 }
 
 h2 span:last-child {
@@ -43,15 +40,16 @@ h2 span:last-child {
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.4;
     padding-bottom: 16px;
+    font-weight: 500;
 }
 
 p {
-    padding-bottom: 16px;
+    padding-bottom: 24px;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.4;
 }
 
@@ -68,9 +66,7 @@ li {
 }
 
 .btn {
-    margin-top: 80px;
     font-weight: bold;
-    align-self: flex-start;
     font-size: 28px;
     line-height: 1;
     letter-spacing: 1px;
@@ -82,6 +78,15 @@ li {
     border-radius: 42px;
     text-decoration: none;
     cursor: pointer;
+    position: fixed;
+    bottom: 40px;
+    left: 32px;
+    background: white;
+}
+
+.btn.is-right {
+    left: unset;
+    right: 56px;
 }
 
 .btn:hover {
@@ -91,12 +96,11 @@ li {
 
 .info {
     border: 1px solid #000000;
-    padding: 16px 96px 24px 16px;
+    padding: 24px 96px 24px 16px;
     display: inline-flex;
     flex-flow: column;
     background: white;
     box-shadow: 16px 16px rgba(0, 0, 0, 0.1);
-    max-width: 70%;
-    max-height: 35vh;
+    max-width: 960px;
     overflow: scroll;
 }

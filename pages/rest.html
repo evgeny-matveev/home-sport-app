@@ -16,19 +16,18 @@
     <script id="template" type="text/template">
         <div class="wrapper">
             <h1>
-                <%= squats[1].name.split(' ')[0] %>
-                <br />
-                <%= squats[1].name.substring(squats[1].name.indexOf(' ') + 1) %>
-            </h1>  
-            <h2>
-                <span><%= user.squats.qty %> повторений</span>
-                <span><%= localStorage.getItem('bNum') %> подход из 3</span>
-            </h2>
+
+            </h1>
         </div>
-        <a class="btn" id="next" href="rest.html">Дальше</a>
+        <a class="btn" id="next" href="">Дальше</a>
     </script>
 
     <div class="content" id="content"></div>
+
+    <div id="timer"></div>
+
+    <!-- <script src="../js/countdown.js"></script> -->
+    <script src="../js/next-action.js"></script>
 </body>
 
 </html>
