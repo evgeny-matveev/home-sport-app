@@ -12,11 +12,15 @@
         <a class="btn" href="pages/warmup.html">Начать</a>
     </div>
     <script>
-        localStorage.setItem('exercise', 1);
-        localStorage.setItem('set', 1);
-        localStorage.setItem('exerciseType', 'a');
-        localStorage.setItem('aNum', 1);
-        localStorage.setItem('bNum', 1);
+        // кол-во выполненых упражнений
+        localStorage.setItem('exCount', 1);
+        // кол-во выполненых сетов
+        localStorage.setItem('setCount', 1);
+        // номер текущего сета
+        localStorage.setItem('setExercise', 0);
+        // счетчики выполненых упражнений в сете
+        localStorage.setItem('setExCount1', 1);
+        localStorage.setItem('setExCount2', 1);
     </script>
 </body>
 </html>

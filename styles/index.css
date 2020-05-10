@@ -77,11 +77,11 @@ li {
     border: 1px solid black;
     border-radius: 42px;
     text-decoration: none;
-    cursor: pointer;
     position: fixed;
     bottom: 40px;
     left: 32px;
     background: white;
+    cursor: default;
 }
 
 .btn.is-right {

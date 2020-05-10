@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренировки дома</title>
+    <!-- Подключаем таймер -->
+    <script src="../js/easytimer.min.js"></script>
+    <!-- Подключаем шаблонизатор -->
+    <script src="../js/ejs.min.js"></script>
+    <!-- Подключаем файл с данными -->
+    <script src="../js/data.js"></script>
+    <!-- Подключаем скрипт, который совмещает шаблонизатор и данные -->
+    <script src="../js/render-template.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+
+<body>
+    <script id="template" type="text/template">
+        <%
+            // Массив со всеми упражнениями из текущего сета
+            // Переменная sets находится в data.js
+            let set = sets[Number(localStorage.getItem('setCount')) - 1];
+            // Номер текущего упражнения в сете: 0 или 1 
+            let setExercise = Number(localStorage.getItem('setExercise'));
+            // Кол-во выполненых упражнений
+            let setExCount1 = Number(localStorage.getItem('setExCount1'));
+            let setExCount2 = Number(localStorage.getItem('setExCount2'));
+            // Берем меньшее кол-во выполненых упражнений, как текущее
+            let setCount = setExCount1 <= setExCount2 ? setExCount1 : setExCount2;
+            // Получаем уровень сложности из данных о пользователе
+            // Переменная user находится в data.js
+            let level = user[set[setExercise][0].group].level;
+            // Получаем текущее упражнение
+            let exercise = set[setExercise][level];
+        %>
+        <div class="wrapper">
+            <!-- Разбиваем название на две части, для дизайна -->
+            <h1>
+                <%= exercise.name.split(' ')[0] %>
+                <br />
+                <%= exercise.name.substring(exercise.name.indexOf(' ') + 1) %>
+            </h1>
+            <h2>
+                <span><%= user[exercise.group].qty %> повторений</span>
+                <span><%= setCount %> подход из 3</span>
+            </h2>
+            <!-- Если есть советы, то показываем их -->
+            <% if (advice[exercise.group]) { %>
+                <div class="info">
+                    <ul>
+                        <% advice[exercise.group].forEach(i => {%>
+                            <li><%= i %></li>
+                        <% }) %>
+                    </ul>
+                    <a class="" href=""></a>
+                </div>
+            <% } %>
+        </div>
+        <a class="btn" id="next" href="rest.html">Дальше</a>
+    </script>
+
+    <div class="content" id="content"></div>
+</body>
+
+</html>
