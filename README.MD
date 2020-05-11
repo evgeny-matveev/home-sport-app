@@ -8,9 +8,11 @@
 1. [ProgressBar.js](https://kimmobrunfeldt.github.io/progressbar.js/) чтобы добавить анимацию прогресса таймера
 1. [p5.js](https://p5js.org/) чтобы добавить визуализацию 
 
-[Ссылка на рабочую версию](https://evgeny-matveev.github.io/home-sport-app/index.html)
-
-[Ссылка на дизайн](https://www.figma.com/file/yV74Y1sgaHLB8TDoZjZGMX/sport-at-home?node-id=0%3A1)
+Полезные ссылки:
+* [Видео, как я рассказываю о домашке и приложении](https://youtu.be/-jAEBCsii0c)
+* [Ссылка на рабочую версию](https://evgeny-matveev.github.io/home-sport-app/index.html)
+* [Ссылка на дизайн](https://www.figma.com/file/yV74Y1sgaHLB8TDoZjZGMX/sport-at-home?node-id=0%3A1)
+* [Справочник по джаваскрипту](https://learn.javascript.ru/)
 
 Домашнее задание:
 1. Сверстать мобильную версию.
