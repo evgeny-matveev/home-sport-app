@@ -39,6 +39,10 @@ body.is-flexible {
     position: relative;
 }
 
+.content.is-index {
+    display: block;
+}
+
 h1 {
     font-weight: 900;
     font-size: 88px;
@@ -70,6 +74,14 @@ h2 {
 
 h2 span:last-child {
     padding-left: 48px;
+}
+
+h2 a {
+    color: inherit;
+}
+
+h2 a:hover {
+    color: red;
 }
 
 h3 {
