@@ -5,20 +5,23 @@
 }
 
 #bar {
-    width: 47vw;
+    width: 200vw;
+    transition: 1000ms all linear;
 }
 
 #timer {
     position: absolute;
     margin: auto;
-    font-size: 17vw;
+    font-size: 30vw;
     font-weight: 900;
     -webkit-text-stroke: 1.5px red;
     -webkit-text-fill-color: white;
+    z-index: 10;
 }
 
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
 }
 
 .content {
