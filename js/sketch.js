@@ -1,5 +1,7 @@
 function setup() {
+    // Создаем канвас, как весь браузер
     let myCanvas = createCanvas(windowWidth, windowHeight);
+    // прикрепляем канвас в заранее созданный элемент
     myCanvas.parent("canvas");
     background(255);
 }
@@ -18,6 +20,7 @@ function draw() {
     ellipse(mouseX, mouseY, 80, 80);
 }
 
+// Изменяем размер канваса, если изменился размер окна
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }

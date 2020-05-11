@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 
 #bar {
@@ -22,6 +23,10 @@
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
+}
+
+body.is-flexible {
+    overflow: auto;
 }
 
 .content {
