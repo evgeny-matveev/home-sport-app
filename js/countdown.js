@@ -59,9 +59,9 @@ function goNextPage() {
     const SET_END = 6;
 
     // Количество выполненых упражнений
-    let exCount = Number(get('exCount'));
+    let exCount = Number(_get('exCount'));
     // Номер упражнения из текущего сета
-    let setExercise = Number(get('setExercise'));
+    let setExercise = Number(_get('setExercise'));
     // Полный адрес сайта, разбитый на части по знаку /
     let url = window.location.href.split('/');
     // Адрес сайта, от которого отрезали последний кусочек
@@ -77,23 +77,23 @@ function goNextPage() {
         // Если выполнили все упражнения в сете
         if (exCount % SET_END === 0) {
             // то увеличиваем кол-во выполненых сетов
-            set('setCount', Number(get('setCount')) + 1);
+            _set('setCount', Number(_get('setCount')) + 1);
             // и сбрасываем счетчики упражнений в сетах
-            set('setExCount1', 1);
-            set('setExCount2', 1);
+            _set('setExCount1', 1);
+            _set('setExCount2', 1);
         } else {
             // Увеличиваем счетчик выполненых упражнений в сете
             // и меняем текущий сет на противоположный
             if (setExercise === SET_EX_COUNT_1) {
-                set('setExCount1', Number(get('setExCount1')) + 1);
-                set('setExercise', SET_EX_COUNT_2);
+                _set('setExCount1', Number(_get('setExCount1')) + 1);
+                _set('setExercise', SET_EX_COUNT_2);
             } else {
-                set('setExCount2', Number(get('setExCount2')) + 1);
-                set('setExercise', SET_EX_COUNT_1);
+                _set('setExCount2', Number(_get('setExCount2')) + 1);
+                _set('setExercise', SET_EX_COUNT_1);
             }
         }
         // Увеличиваем общий счетчик выполненых упражнений
-        set('exCount', exCount + 1);
+        _set('exCount', exCount + 1);
         // устанавливаем адрес следующей страницы
         nextPage = 'exercise.html';
     }
@@ -105,10 +105,10 @@ function goNextPage() {
 
 // Обе функции ниже написаны, чтобы сэкономить место на экране
 
-function get(item) {
+function _get(item) {
     return localStorage.getItem(item);
 }
 
-function set(item, value) {
+function _set(item, value) {
     localStorage.setItem(item, value);
 }
