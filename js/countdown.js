@@ -1,10 +1,19 @@
+// Инициализируем библиотеку Изи Таймера
 let timer = new easytimer.Timer();
+// Находим и кладем в переменную ссылку на элемент,
+// куда будем выводить счетчик времени
 let timerTemplate = document.getElementById('timer');
 
+// Задаем время отдыха в секундах 
 const TIME = 90;
-let STEP = 100 / TIME / 100;
+// Задаем шаг, на который должен увеличиваться прогресс
+// за одну секунду
+// Находим 1% от времени, затем делим весь прогресс на найденные доли
+let STEP = 100 / TIME * 0.01;
+// Задаем прогрессу один шаг, чтобы совпала анимация и таймер
 let progress = STEP;
 
+// Инициализируем библиотеку с анимацией круга
 let circle = new ProgressBar.Circle('#bar', {
     color: 'rgb(255 0 0)',
     trailColor: 'rgb(255 255 255)',
@@ -13,21 +22,30 @@ let circle = new ProgressBar.Circle('#bar', {
     easing: 'linear',
 });
 
+// Запускаем счетчик времени
 timer.start({
     countdown: true,
     startValues: { seconds: TIME }
 });
 
+// Вставляем счетчик времени в HTML
 timerTemplate.innerHTML = timer.getTimeValues().toString(['minutes', 'seconds']);
 
+// Добавляем обработчик событий таймера,
+// чтобы на каждую пройденную секунду
+// таймер обновлял в HTMLе кол-во времени,
+// а круг анимировался 
 timer.addEventListener('secondsUpdated', e => {
     timerTemplate.innerHTML = timer.getTimeValues().toString(['minutes', 'seconds']);
     circle.animate(progress);
     progress += STEP;
 });
 
+// Переводим человека на страницу упражнения,
+// когда таймер закончится
 timer.addEventListener('targetAchieved', e => {
-    // goNextPage()
+    // Но сначала ждем одну секунду, 
+    // чтобы закончилась анимация
     setTimeout(goNextPage, 1000)
 });
 
