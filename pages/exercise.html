@@ -44,6 +44,7 @@
                 <span><%= user[exercise.group].qty %> повторений</span>
                 <span><%= setCount %> подход из 3</span>
             </h2>
+            <div id="canvas"></div>
             <!-- Если есть советы, то показываем их -->
             <% if (advice[exercise.group]) { %>
                 <div class="info">
@@ -60,6 +61,8 @@
     </script>
 
     <div class="content" id="content"></div>
+    <script src="../js/p5.min.js"></script>
+    <script src="../js/sketch.js"></script>
 </body>
 
 </html>
