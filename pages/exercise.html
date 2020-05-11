@@ -17,12 +17,15 @@
 <body>
     <script id="template" type="text/template">
         <%
-            // Массив со всеми упражнениями из текущего сета
-            // Переменная sets находится в data.js
+            // sets — массив со всеми упражнениями из текущего сета,
+            // находится в data.js
+            // Берем из массива текущий сет при помощи записанной
+            // в память браузера информации в setCount
+            // Так как массивы считаются от 0, то отнимаем от счетчика сета 1
             let set = sets[Number(localStorage.getItem('setCount')) - 1];
             // Номер текущего упражнения в сете: 0 или 1 
             let setExercise = Number(localStorage.getItem('setExercise'));
-            // Кол-во выполненых упражнений
+            // Кол-во выполненых упражнений первого и второго типа
             let setExCount1 = Number(localStorage.getItem('setExCount1'));
             let setExCount2 = Number(localStorage.getItem('setExCount2'));
             // Берем меньшее кол-во выполненых упражнений, как текущее
@@ -36,8 +39,10 @@
         <div class="wrapper">
             <!-- Разбиваем название на две части, для дизайна -->
             <h1>
+                <!-- Документация: https://learn.javascript.ru/array-methods -->
                 <%= exercise.name.split(' ')[0] %>
                 <br />
+                <!-- Документация: https://learn.javascript.ru/string -->
                 <%= exercise.name.substring(exercise.name.indexOf(' ') + 1) %>
             </h1>
             <h2>
@@ -48,6 +53,7 @@
             <% if (advice[exercise.group]) { %>
                 <div class="info">
                     <ul>
+                        <!-- Документация: https://learn.javascript.ru/arrow-functions -->
                         <% advice[exercise.group].forEach(i => {%>
                             <li><%= i %></li>
                         <% }) %>

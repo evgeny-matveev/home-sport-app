@@ -9,6 +9,7 @@
 1. [p5.js](https://p5js.org/) чтобы добавить визуализацию 
 
 [Ссылка на рабочую версию](https://evgeny-matveev.github.io/home-sport-app/index.html)
+
 [Ссылка на дизайн](https://www.figma.com/file/yV74Y1sgaHLB8TDoZjZGMX/sport-at-home?node-id=0%3A1)
 
 Домашнее задание:
